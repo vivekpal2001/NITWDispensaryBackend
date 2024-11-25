@@ -7,7 +7,7 @@ require('dotenv').config()
 
 //fors cors
 const corsOptions = {
-    origin: 'https://nitw-dispensary-frontend.vercel.app/',  // Replace with your frontend URL
+    origin: '*',  // Replace with your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   };
