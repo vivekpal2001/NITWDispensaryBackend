@@ -1,7 +1,7 @@
 
 const doctor_model=require("../models/doctor.model")
 
-exports.signin=async(req,res)=>{
+exports.signindr=async(req,res)=>{
 
     //get details from body
     const getUser=await doctor_model.findOne({email:req.body.email})    
