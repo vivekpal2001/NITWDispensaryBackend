@@ -38,6 +38,7 @@ db.once("open",()=>{
 require("./routes/patient.routes")(app);
 require("./routes/appointment.route")(app);
 require("./routes/upload.route")(app);
+require("./routes/doctor.route")(app)
 
 app.listen(process.env.PORT,()=>{
     console.log("Server started at port",process.env.PORT)
