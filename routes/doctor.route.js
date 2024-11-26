@@ -1,7 +1,9 @@
 // routes/appointmentRoutes.js
 
-const doctorController=require("../controllers/appointment.controller")
+const appointmentController=require("../controllers/appointment.controller")
+const doctorController=("../controllers/doctor.controller")
 
 module.exports=(app)=>{
-    app.get("/doctor/getappointments/:name",doctorController.getappointments);
+    app.get("/doctor/getappointments/:name",appointmentController.getappointments);
+    app.post("/doctor/signin",doctorController.signin)
     }

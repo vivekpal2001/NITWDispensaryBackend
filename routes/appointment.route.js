@@ -2,6 +2,7 @@
 
 const appointmentController=require("../controllers/appointment.controller")
 
+
 module.exports=(app)=>{
     app.post("/patient/appointments",appointmentController.bookAppointment);
     app.get("/patient/getallappointments",appointmentController.getAllAppointments);
