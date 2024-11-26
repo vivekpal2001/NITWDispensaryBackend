@@ -129,3 +129,29 @@ exports.rescheduleAppointment = async (req, res) => {
         }
     };
     
+
+
+    //doctor get all
+    exports.getappointments = async (req, res) => {
+        try {
+            // Access email from query parameters
+            const drname = req.params.name;
+            // Log the email for debugging
+            // console.log('Fetching appointments for email:', email);
+    
+            if (!drname) {
+                return res.status(400).json({ message: 'Dr name is required' });
+            }
+    
+            // Retrieve all appointments for the signed-in patient by name
+            const appointments = await Appointment.find({ drname });
+    
+            // Log the appointments for debugging
+            // console.log('Appointments found:', appointments);
+    
+            res.status(200).json(appointments);
+        } catch (error) {
+            console.error('Error retrieving appointments:', error);
+            res.status(500).json({ message: 'Error retrieving appointments', error });
+        }
+    };

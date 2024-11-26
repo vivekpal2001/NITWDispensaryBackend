@@ -10,4 +10,7 @@ module.exports=(app)=>{
 app.post('/appointments/cancel/:id', appointmentController.cancelAppointment);
 app.post('/appointments/reschedule/:id', appointmentController.rescheduleAppointment);
 app.post("/admin/delete/:id",appointmentController.deleteData)
+
+//for doctor
+
     }
