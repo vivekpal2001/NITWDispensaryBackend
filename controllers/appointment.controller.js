@@ -3,7 +3,7 @@ const Appointment = require("../models/appointment.model");
 
 exports.bookAppointment = async (req, res) => {
     const { date, time, doctor, specialty, patientName, patientAge, patientSex, email } = req.body;
-
+ console.log(req.body);
     try {
         // Check if the time slot is already booked for the given date and doctor
         const existingAppointment = await Appointment.findOne({ date, time, doctor });
