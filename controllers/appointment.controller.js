@@ -144,7 +144,7 @@ exports.rescheduleAppointment = async (req, res) => {
             }
     
             // Retrieve all appointments for the signed-in dr patient by name
-            const appointments = await Appointment.find({ drname });
+            const appointments = await Appointment.find({ doctor:drname });
     
             // Log the appointments for debugging
             // console.log('Appointments found:', appointments);
