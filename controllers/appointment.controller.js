@@ -135,7 +135,7 @@ exports.rescheduleAppointment = async (req, res) => {
     exports.getappointments = async (req, res) => {
         try {
             // Access email from query parameters
-            const drname = req.query;
+            const drname = req.query.name;
             // Log the email for debugging
              console.log('Fetching appointments for Dr:', drname);
     
@@ -144,7 +144,7 @@ exports.rescheduleAppointment = async (req, res) => {
             }
     
             // Retrieve all appointments for the signed-in dr patient by name
-            const appointments = await Appointment.find({ doctor:drname });
+            const appointments = await Appointment.find({ drname });
     
             // Log the appointments for debugging
             // console.log('Appointments found:', appointments);
