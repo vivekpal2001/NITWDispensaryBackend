@@ -137,7 +137,7 @@ exports.rescheduleAppointment = async (req, res) => {
             // Access email from query parameters
             const drname = req.params.name;
             // Log the email for debugging
-             console.log('Fetching appointments for email:', drname);
+             console.log('Fetching appointments for Dr:', drname);
     
             if (!drname) {
                 return res.status(400).json({ message: 'Dr name is required' });
